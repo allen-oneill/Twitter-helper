@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Quick Twit</h1>
+    <p class="lead">Example html helper in ASP.net to send quick twitter messages without twitter API</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>List of updates</h2>
+        <p>
+           Click to send to tweet!
+        </p>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-success shoutOut">Weehoo! .. on a roll :) </a>
+            <a href="#" class="list-group-item list-group-item-info shoutOut">Wow - did you see that?! #howzat!</a>
+            <a href="#" class="list-group-item list-group-item-warning shoutOut">Keep going, almost there #Motivation</a>
+            <a href="#" class="list-group-item list-group-item-danger shoutOut">On nos!! somefink wrong! :/ #myBad</a>
+        </div>
+
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $('.shoutOut').click(
+	    function(){
+	      var tweetOut = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(this.innerText)
+          window.open(tweetOut, '_blank');
+          return false;
+          }
+        )
+    </script>
+    }
